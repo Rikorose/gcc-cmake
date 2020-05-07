@@ -11,4 +11,4 @@ In your sources directory call
 docker run --rm -v `pwd`:/usr/src/myapp rikorose/gcc-cmake:<version> command
 ```
 Where:
-* version - is version of gcc [4,5,6,7,8,9 (latest)]
+* version - is version of gcc [4,5,6,7,8,9,10 (latest)]
