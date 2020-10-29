@@ -1,5 +1,5 @@
 # gcc-cmake
-Docker container build on top off the official gcc image including cmake (version 3.18.2)
+Docker container build on top off the official gcc image including cmake (version 3.18.4)
 
 This image is just an extension of [official gcc image](https://hub.docker.com/_/gcc/)
 thus for the full documentation see the docs there.
