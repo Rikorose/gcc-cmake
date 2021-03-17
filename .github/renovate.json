@@ -9,5 +9,11 @@
         "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\n.*?=(?<currentValue>.*)"
       ]
     }
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["CMake"],
+      "extractVersion": "^v(?<version>.*)$"
+    }
   ]
 }
