@@ -12,7 +12,7 @@
   ],
   "packageRules": [
     {
-      "matchPackageNames": ["CMake"],
+      "matchPackageNames": ["Kitware/CMake"],
       "extractVersion": "^v(?<version>.*)$"
     }
   ]
