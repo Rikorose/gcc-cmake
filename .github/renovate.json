@@ -6,7 +6,12 @@
       "matchStrings": ["ENV CMAKE_VERSION=(?<currentValue>.*?)\n"],
       "depNameTemplate": "cmake",
       "datasourceTemplate": "github-releases",
-      "lookupNameTemplate": "Kitware/CMake",
+      "lookupNameTemplate": "Kitware/CMake"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["cmake"],
       "extractVersion": "^v(?<version>.*)$"
     }
   ]
