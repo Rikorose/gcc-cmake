@@ -7,7 +7,8 @@
       "matchStrings": ["ENV CMAKE_VERSION=(?<currentValue>.*?)"],
       "datasourceTemplate": "github-releases",
       "lookupNameTemplate": "Kitware/CMake",
-      "depNameTemplate": "Kitware/CMake"
+      "depNameTemplate": "Kitware/CMake",
+      "versioningTemplate": "node"
     }
   ],
   "packageRules": [
