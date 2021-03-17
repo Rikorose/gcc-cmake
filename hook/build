@@ -1,0 +1,11 @@
+#!/bin/bash
+
+GCC_VERSION=$(echo $DOCKER_TAG | cut -d "-" -f2)
+
+
+if [ $DOCKER_TAG == "latest" ]
+then
+  docker build . --build-arg GCC_VERSION=${DOCKER_TAG} -t ${IMAGE_NAME}
+else
+  docker build . --build-arg GCC_VERSION=${GCC_VERSION} -t ${IMAGE_NAME}
+fi

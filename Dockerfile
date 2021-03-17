@@ -1,6 +1,6 @@
 # renovate: datasource=docker depName=gcc versioning=docker
-ARG GCC_IMAGE=gcc:10
-FROM $GCC_IMAGE
+ARG GCC_VERSION=10
+FROM gcc:$GCC_VERSION
 
 # renovate: datasource=github-releases depName=Kitware/CMake
 ARG CMAKE_VERSION=3.19.6
