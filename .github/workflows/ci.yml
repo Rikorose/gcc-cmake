@@ -21,30 +21,6 @@ jobs:
         with:
           install: true
       -
-        name: Build gcc-4
+        name: Build
         run: |
-          docker build gcc-4
-      -
-        name: Build gcc-5
-        run: |
-          docker build gcc-5
-      -
-        name: Build gcc-6
-        run: |
-          docker build gcc-6
-      -
-        name: Build gcc-7
-        run: |
-          docker build gcc-7
-      -
-        name: Build gcc-8
-        run: |
-          docker build gcc-8
-      -
-        name: Build gcc-9
-        run: |
-          docker build gcc-9
-      -
-        name: Build gcc-10
-        run: |
-          docker build gcc-10
+          docker build .

@@ -1,6 +1,10 @@
-FROM gcc:6
+# renovate: datasource=docker depName=gcc versioning=docker
+ARG GCC_VERSION=10
+FROM gcc:$GCC_VERSION
 
-ENV CMAKE_VERSION=3.19.6
+# renovate: datasource=github-releases depName=Kitware/CMake
+ARG CMAKE_VERSION=3.19.6
+
 RUN wget https://github.com/Kitware/CMake/releases/download/v${CMAKE_VERSION}/cmake-${CMAKE_VERSION}-Linux-x86_64.sh \
       -q -O /tmp/cmake-install.sh \
       && chmod u+x /tmp/cmake-install.sh \
