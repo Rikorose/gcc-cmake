@@ -1,20 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
   "regexManagers": [
     {
-      "fileMatch": ["^Dockerfile$"],
-      "matchStrings": ["ENV CMAKE_VERSION=(?<currentValue>.*?)"],
-      "datasourceTemplate": "github-releases",
-      "lookupNameTemplate": "Kitware/CMake",
-      "depNameTemplate": "Kitware/CMake",
-      "versioningTemplate": "node"
-    }
-  ],
-  "packageRules": [
-    {
-      "matchPackageNames": ["Kitware/CMake"],
-      "extractVersion": "^v(?<version>.*)$"
+      "fileMatch": [
+        "^Dockerfile$"
+      ],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\n.*?=(?<currentValue>.*)"
+      ]
     }
   ]
 }
