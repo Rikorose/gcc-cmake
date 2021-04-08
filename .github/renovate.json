@@ -14,6 +14,10 @@
     {
       "matchPackageNames": ["Kitware/CMake"],
       "extractVersion": "^v(?<version>.*)$"
+    },
+    {
+      "matchUpdateTypes": ["minor"],
+      "automerge": true
     }
   ]
 }
