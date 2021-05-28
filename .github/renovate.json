@@ -16,7 +16,9 @@
       "extractVersion": "^v(?<version>.*)$"
     },
     {
-      "matchUpdateTypes": ["minor"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchCurrentVersion": "!/^0/",
+      "automergeType": "branch",
       "automerge": true
     }
   ]
