@@ -2,7 +2,7 @@ name: Create and publish a Docker image
 
 on:
   push:
-    branches: ['feat_publish']
+    branches: ['master']
 
 env:
   REGISTRY: ghcr.io
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        gcc-version: ['8', '9', '10', '11', 'latest']
+        gcc: ['8', '9', '10', '11', 'latest']
     permissions:
       contents: read
       packages: write
@@ -29,10 +29,25 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Generate Tag
+        id: tag
+        shell: bash
+        run: |
+          IMAGE=${{ env.IMAGE_NAME }}
+          IMAGE=${IMAGE,,}
+          if [ "${{ matrix.gcc }}" == "latest" ]; then
+            TAG=${{ matrix.gcc }}
+          else
+            TAG=gcc-${{ matrix.gcc }}
+          fi
+          IMAGE_TAG="${{ env.REGISTRY }}/$IMAGE:$TAG"
+          echo "$IMAGE_TAG"
+          echo "IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_ENV
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
           context: .
           push: true
-          tags: gcc-${{ matrix.gcc-version }}
-          build-args: GCC_VERSION=${{ matrix.gcc-version }}
+          tags: ${{ env.IMAGE_TAG }}
+          build-args: GCC_VERSION=${{ matrix.gcc }}
