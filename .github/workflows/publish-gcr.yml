@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        gcc: ['8', '9', '10', '11', '12', 'latest']
+        gcc: ['8', '9', '10', '11', '12', '13', 'latest']
     permissions:
       contents: read
       packages: write
