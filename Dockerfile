@@ -3,7 +3,7 @@ ARG GCC_VERSION=15
 FROM gcc:$GCC_VERSION
 
 # renovate: datasource=github-releases depName=Kitware/CMake
-ARG CMAKE_VERSION=4.2.2
+ARG CMAKE_VERSION=4.2.3
 
 RUN wget https://github.com/Kitware/CMake/releases/download/v${CMAKE_VERSION}/cmake-${CMAKE_VERSION}-Linux-x86_64.sh \
       -q -O /tmp/cmake-install.sh \
